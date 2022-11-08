@@ -29,7 +29,7 @@ void _swap(int *array, int i, int j)
  *
  * Return: New Pivot
  */
-int partition(int *array, int min, int max, size_t size)
+int partition_hoare(int *array, int min, int max, size_t size)
 {
 	int i, j, pivot = array[max];
 
@@ -65,7 +65,7 @@ void quicksort(int *array, int min, int max, size_t size)
 
 	if (min < max)
 	{
-		p = partition(array, min, max, size);
+		p = partition_hoare(array, min, max, size);
 		quicksort(array, min, p - 1, size);
 		quicksort(array, p, max, size);
 	}
